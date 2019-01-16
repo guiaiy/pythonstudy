@@ -58,7 +58,8 @@ def login():
     while userchec == 'true' and false < 3:
         username = input('用户名不存在，请重新输入\n')
         userchec = usercheck(username)
-        passchec = getpass.getpass('请输入密码\n')
+        password = getpass.getpass('请输入密码\n')
+        passchec = passwordcheck(username, password)
         false += 1
     while passchec == 'false' and false < 3:
         print('密码错误，请重新输入')
