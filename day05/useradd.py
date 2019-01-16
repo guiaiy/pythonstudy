@@ -13,8 +13,9 @@ def useradd():
     return (username,password)
 
 def infosave():
-    with open('/tmp/userinfosave','w') as f1:
+    with open('/tmp/userinfosave','a') as f1:
         userinfo = useradd()
+
         return userinfo
 
 
