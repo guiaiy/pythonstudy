@@ -18,7 +18,6 @@ def check_id(id):
         if otherletter not in str+dig:
             print('invalid:  \033[31;1mThe %sth letter "%s" is invalid!\033[0m' % (pos+2,otherletter))
             return 4
-    print('valid')
     return 0
 
 
