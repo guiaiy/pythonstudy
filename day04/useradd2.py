@@ -15,6 +15,7 @@ password:%s
     with open(userfile,'a') as fobj:
         fobj.write(user_info)
 
+
 if __name__ == '__main__':
     password = randpass2.getrandpass2()
     adduser(sys.argv[1],password,'/tmp/passwd')
