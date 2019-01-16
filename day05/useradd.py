@@ -17,7 +17,7 @@ def infosave():
         userinfo = useradd()
         for user in userinfo:
             info = user+':'+userinfo[user]
-            f1.write(info)
+            f1.write(info+'\n')
         return userinfo
 
 
