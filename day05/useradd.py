@@ -12,6 +12,12 @@ def useradd():
         password = getpass.getpass('密码长度不够，请重新输入\n')
     return (username,password)
 
+def infosave():
+    with open('/tmp/userinfosave','w') as f1:
+        userinfo = useradd()
+        return userinfo
+
+
 if __name__ == '__main__':
-    userinfo=useradd()
+    userinfo=infosave()
     print(userinfo)
