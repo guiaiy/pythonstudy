@@ -41,7 +41,7 @@ def passwordcheck(username,password):
         for line in lines:
             user = line.replace(line[line.index(':'):],'')
             userpass = line.replace(line[0:line.index(':')+1],'')
-            if user == username and userpass == password:
+            if user == username and userpass == password+'\n':
                 return 'true'
         return 'false'
 
