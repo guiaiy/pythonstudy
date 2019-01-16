@@ -71,7 +71,7 @@ def login():
         return 'false'
     print('登录成功')
     with open('/tmp/'+username+'longinfo','w') as f2:
-        f2.write('login')
+        f2.write('login\n')
 
 
 
