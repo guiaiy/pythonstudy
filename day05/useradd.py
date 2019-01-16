@@ -10,14 +10,14 @@ def useradd():
     password = getpass.getpass('请输入6位以上密码\n')
     while len(password) < 6:
         password = getpass.getpass('密码长度不够，请重新输入\n')
-    return (username,password)
+    return {username:password}
 
 def infosave():
     with open('/tmp/userinfosave','a') as f1:
         userinfo = useradd()
-        for user,passwd in userinfo:
-            strinfo=user+':'+passwd
-            f1.write(strinfo)
+        for user in userinfo:
+            info = user+':'+userinfo[user]
+            f1.write(info)
         return userinfo
 
 
