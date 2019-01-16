@@ -8,7 +8,7 @@ def check_id(word):
     if word in keyword.kwlist:
         return 'invalid:  \033[31;1mThe letter %s is a passwd\033[0m' %(word)
     if word[0] not in id:
-        return 'invalid:  \033[31;1mThe first position must be a letter or "_"'
+        return 'invalid:  \033[31;1mThe first position must be a letter or "_"\033[0m'
     else:
         for ind,ch in enumerate(word[1:]):
             if ch not in other_id:

@@ -1,8 +1,8 @@
 import random
 
 def caiquan():
-    allchoice = ["石头","剪刀","布"]
-    wins = [['石头','剪刀'],['剪刀','布'],['布','石头']]
+    allchoice = ["石头","剪刀","布".center(3)]
+    wins = [['石头','剪刀'],['剪刀','布'.center(3)],['布'.center(3),'石头']]
     comchoice = random.choice(allchoice)
     select = input('请选择  1:石头， 2:剪刀， 3:布  ')
     while select not in ['1','2','3']:
