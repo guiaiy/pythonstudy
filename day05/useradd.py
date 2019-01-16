@@ -15,7 +15,7 @@ def useradd():
 def infosave():
     with open('/tmp/userinfosave','a') as f1:
         userinfo = useradd()
-
+        f1.read(userinfo)
         return userinfo
 
 
