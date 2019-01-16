@@ -6,7 +6,7 @@ def useradd():
     check = usercheck(username)
     result = checkid.check_id(username)
     while check == 'false':
-        username = input('请重新输入用户名\n')
+        username = input('用户名已经存在，请重新输入用户名\n')
         check = usercheck(username)
     while result != 0:
         username = input('请重新输入用户名\n')
@@ -29,7 +29,6 @@ def usercheck(username):
         for line in userinfo:
             user = line.replace(line[line.index(':'):],'')
             if username == user:
-                print('用户名已经存在')
                 return 'false'
         return 'true'
 
@@ -59,7 +58,6 @@ def login():
     while passchec == 'false' and false < 3:
         username = input('密码错误，请重新输入\n')
         print('请输入用户名\n')
-        userchec = usercheck(username)
         passchec = getpass.getpass('请输入密码\n')
         false += 1
     with open('/tmp/'+username+'longinfo','w') as f2:
