@@ -50,14 +50,14 @@ def login():
     userchec = usercheck(username)
     passchec = passwordcheck(username,password)
     false = 0
-    while usercheck == 'true' and false < 3:
+    while userchec == 'true' and false < 3:
         username = input('用户名不存在，请重新输入\n')
         userchec = usercheck(username)
         passchec = getpass.getpass('请输入密码\n')
         false += 1
     while passchec == 'false' and false < 3:
-        username = input('密码错误，请重新输入\n')
-        print('请输入用户名\n')
+        print('密码错误，请重新输入\n')
+        username = input('请输入用户名\n')
         passchec = getpass.getpass('请输入密码\n')
         false += 1
     with open('/tmp/'+username+'longinfo','w') as f2:
