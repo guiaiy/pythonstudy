@@ -25,6 +25,7 @@ def infosave():
         for user in userinfo:
             info = user+':'+userinfo[user]
             f1.write(info+'\n')
+        print('注册成功')
 
 def usercheck(username):
     with open('/tmp/userinfosave') as f1:
