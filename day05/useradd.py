@@ -15,7 +15,9 @@ def useradd():
 def infosave():
     with open('/tmp/userinfosave','a') as f1:
         userinfo = useradd()
-        f1.write(userinfo)
+        for user,passwd in userinfo:
+            strinfo=user+':'+passwd
+            f1.write(strinfo)
         return userinfo
 
 
