@@ -2,6 +2,7 @@ import checkid
 import getpass
 
 def useradd():
+    print('用户注册\n')
     username = input('请输入用户名\n')
     check = usercheck(username)
     result = checkid.check_id(username)
@@ -45,6 +46,7 @@ def passwordcheck(username,password):
 
 
 def login():
+    print('用户登录\n')
     username = input('请输入用户名\n')
     password = getpass.getpass('请输入密码\n')
     userchec = usercheck(username)
