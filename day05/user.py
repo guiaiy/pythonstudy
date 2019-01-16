@@ -70,3 +70,5 @@ def login():
 
 if __name__ == '__main__':
     useradd()
+    infosave()
+    login()
