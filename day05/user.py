@@ -67,6 +67,7 @@ def login():
     if false >= 3:
         print('失败次数过多，退出程序')
         return 'false'
+    print('登录成功')
     with open('/tmp/'+username+'longinfo','w') as f2:
         f2.write('login')
 
