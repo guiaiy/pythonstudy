@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
-# '描述模块功能‘
-# import shutil
+'这是字符串相关的模块'    # '描述模块功能‘
 import string #导入模块
-# shutil.copy()
-# shutil.move()
-# shutil.copytree()
-# shutil.rmtree()
 
 all_chs= string.ascii_letters #全局变量
 
