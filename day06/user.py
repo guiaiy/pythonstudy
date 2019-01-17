@@ -69,18 +69,18 @@ def login():
 def pass_check(password):
     if len(password) < 8:
         print('密码长度不够')
-        return 1
+        return '1'
     if password.isdigit():
         print('密码不能为纯数字')
-        return 2
+        return '2'
     count = 0
     for i in password:
         if i.isdigit():
             count += 1
     if count == 0:
         print('密码必须包含数字')
-        return 3
-    return 0
+        return '3'
+    return '0'
 
 
 if __name__ == '__main__':
