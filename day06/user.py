@@ -2,42 +2,38 @@
 import checkid
 import getpass
 
-def useradd():
+
+userdb = {}
+
+
+def user_regist():
     print('用户注册')
-    username = input('请输入用户名\n')
-    check = usercheck(username)
-    result = checkid.check_id(username)
-    while check == 'false' or result != 0:
+    while True:
+        username = input('请输入用户名\n')
+        check = user_check(username)
+        result = checkid.check_id(username)
         if check == 'false':
             username = input('用户名已经存在，请重新输入用户名\n')
-            check = usercheck(username)
-            result = checkid.check_id(username)
+            continue
         if result != 0:
-            username = input('请重新输入用户名\n')
-            result = checkid.check_id(username)
-    password = getpass.getpass('请输入6位以上密码\n')
-    while len(password) < 6:
-        password = getpass.getpass('密码长度不够，请重新输入\n')
-    return {username:password}
+            continue
+    while True:
+        password = getpass.getpass('请输入密码,密码必须超过八位，包括大小写字母和数字\n')
+        check = pass_check(password)
+        if check != '0':
+            continue
+    userdb.update({username:password})
+    print('注册成功')
 
-def infosave():
-    with open('/var/www/userinfosave','a') as f1:
-        userinfo = useradd()
-        for user in userinfo:
-            info = user+':'+userinfo[user]
-            f1.write(info+'\n')
-        print('注册成功')
 
-def usercheck(username):
-    with open('/var/www/userinfosave') as f1:
-        userinfo = f1.readlines()
-        for line in userinfo:
-            user = line.replace(line[line.index(':'):],'')
-            if username == user:
-                return 'false'
-        return 'true'
+def user_check(username):
+    for user in userdb:
+        if username == user:
+            return 'false'
+    return 'true'
 
-def passwordcheck(username,password):
+
+def password_check(username,password):
     with open('/var/www/userinfosave') as f1:
         lines = f1.readlines()
         for line in lines:
@@ -46,6 +42,7 @@ def passwordcheck(username,password):
             if user == username and userpass == password+'\n':
                 return 'true'
         return 'false'
+
 
 def login():
     print('用户登录')
@@ -72,5 +69,10 @@ def login():
     with open('/var/www/'+username+'longinfo','w') as f2:
         f2.write('login\n')
 
+
+def pass_check(password):
+    print()
+
+
 if __name__ == '__main__':
-    login()
+    user_regist()
