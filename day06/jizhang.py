@@ -1,25 +1,19 @@
 #!/usr/bin/env python3
 import time
 import pickle
+import menu
 
 benjin = {'foundation': 10000}
 
 
-def menu():
+def mianmenu():
     cmds = {'1': shouru, '2': zhichu, '3': chazhang, '4': gaizhang}
-    menu = '''请选择您需要的操作
+    select = menu.menu('''请选择您需要的操作
 1. 收入\t\t2. 支出
 3. 查询\t\t4. 修改
-5. 退出'''
+5. 退出
+''', '12345')
     while True:
-        select = input(menu1).strip()
-        if not select:
-            print('你没有选择任何内容')
-            continue
-        select = select[0]
-        if select not in '12345':
-            print('超出选择范围')
-            continue
         if select == '5':
             print('感谢使用')
         cmds[select]()
@@ -55,8 +49,11 @@ def zhichu():
 
 
 def chazhang():
-    menu = '''请选择你需要查询的内容
-    1. 明细\t\t2. 结余'''
+    select = menu.menu('''请选择你需要查询的内容
+1. 明细\t\t2. 结余
+''', '12')
+    while True:
+        if select == 1:
 
 
 def gaizhang():
