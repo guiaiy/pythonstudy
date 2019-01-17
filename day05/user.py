@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import checkid
 import getpass
 
@@ -20,7 +21,7 @@ def useradd():
     return {username:password}
 
 def infosave():
-    with open('/tmp/userinfosave','a') as f1:
+    with open('/var/www/userinfosave','a') as f1:
         userinfo = useradd()
         for user in userinfo:
             info = user+':'+userinfo[user]
@@ -28,7 +29,7 @@ def infosave():
         print('注册成功')
 
 def usercheck(username):
-    with open('/tmp/userinfosave') as f1:
+    with open('/var/www/userinfosave') as f1:
         userinfo = f1.readlines()
         for line in userinfo:
             user = line.replace(line[line.index(':'):],'')
@@ -37,7 +38,7 @@ def usercheck(username):
         return 'true'
 
 def passwordcheck(username,password):
-    with open('/tmp/userinfosave') as f1:
+    with open('/var/www/userinfosave') as f1:
         lines = f1.readlines()
         for line in lines:
             user = line.replace(line[line.index(':'):],'')
@@ -45,8 +46,6 @@ def passwordcheck(username,password):
             if user == username and userpass == password+'\n':
                 return 'true'
         return 'false'
-
-
 
 def login():
     print('用户登录')
@@ -70,11 +69,8 @@ def login():
         print('失败次数过多，退出程序')
         return 'false'
     print('登录成功')
-    with open('/tmp/'+username+'longinfo','w') as f2:
+    with open('/var/www/'+username+'longinfo','w') as f2:
         f2.write('login\n')
-
-
-
 
 if __name__ == '__main__':
     login()
