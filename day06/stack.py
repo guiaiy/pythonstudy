@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 stack = []
 
+
 def show_menu():
-    cmds = {'1':push,'2':pop,'3':view,}
+    cmds = {'1': push, '2': pop, '3': view}
     prompt = '''(1) push it
 (2) pop it
 (3) view it
@@ -27,17 +28,21 @@ please input your choice(1/2/3/4):  '''
         # else:
         #     view()
 
+
 def push():
     item = input('item to push: ').strip()
     if item:
         stack.append(item)
 
+
 def pop():
     if stack:
         print('from stack popped %s' % stack.pop())
 
+
 def view():
     print(stack)
+
 
 if __name__ == '__main__':
     show_menu()

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import random
 
+
 def caiquan():
     allchoice = ["石头","剪刀","布".center(3)]
     wins = [['石头','剪刀'],['剪刀','布'.center(3)],['布'.center(3),'石头']]
@@ -20,6 +21,7 @@ def caiquan():
         else:
             print('电脑:\033[041;1m%s\033[0m vs 玩家:\033[041;1m%s\033[0m result:\033[031;1m你输了\033[0m' % (comchoice, humchoice))
             return 'lose'
+
 
 if __name__ == '__main__':
     caiquan()
