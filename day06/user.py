@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import checkid
 import getpass
-
+import string
 
 userdb = {}
 
@@ -18,7 +18,7 @@ def user_regist():
         if result != 0:
             continue
     while True:
-        password = getpass.getpass('请输入密码,密码必须超过八位，包括大小写字母和数字\n')
+        password = getpass.getpass('请输入密码,密码必须超过八位，包括字母和数字\n')
         check = pass_check(password)
         if check != '0':
             continue
@@ -34,12 +34,8 @@ def user_check(username):
 
 
 def password_check(username,password):
-    with open('/var/www/userinfosave') as f1:
-        lines = f1.readlines()
-        for line in lines:
-            user = line.replace(line[line.index(':'):],'')
-            userpass = line.replace(line[0:line.index(':')+1],'')
-            if user == username and userpass == password+'\n':
+        for user,userpass in userdb.items():
+            if user == username and userpass == password:
                 return 'true'
         return 'false'
 
@@ -71,7 +67,20 @@ def login():
 
 
 def pass_check(password):
-    print()
+    if len(password) < 8:
+        print('密码长度不够')
+        return 1
+    if password.isdigit():
+        print('密码不能为纯数字')
+        return 2
+    count = 0
+    for i in password:
+        if i.isdigit():
+            count += 1
+    if count == 0:
+        print('密码必须包含数字')
+        return 3
+    return 0
 
 
 if __name__ == '__main__':

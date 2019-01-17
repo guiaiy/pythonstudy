@@ -3,7 +3,7 @@ import user
 
 if __name__ == '__main__':
     while True:
-        cmds = {'1':user.infosave, '2':user.login}
+        cmds = {'1':user.user_regist, '2':user.login}
         select = input('请选择一个功能1，注册 2，登录 3,退出\n').strip()
         if not select:
             print('输入有误，请重新输入')
