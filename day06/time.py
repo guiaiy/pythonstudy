@@ -31,3 +31,7 @@ a = t + days
 print(a)
 print(a.month)
 print(a.day)
+
+
+b = datetime.today() - timedelta(days=1)
+print(b.day)
