@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import checkid
 import getpass
-import string
+
 
 userdb = {}
+loginfo = {}
 
 
 def user_regist():
@@ -13,17 +14,19 @@ def user_regist():
         check = user_check(username)
         result = checkid.check_id(username)
         if check == 'false':
-            username = input('用户名已经存在，请重新输入用户名\n')
+            print('用户名已经存在，请重新输入用户名\n')
             continue
         if result != 0:
             continue
+        else:
+            break
     while True:
         password = getpass.getpass('请输入密码,密码必须超过八位，包括字母和数字\n')
         check = pass_check(password)
         if check != '0':
             continue
-    userdb.update({username:password})
-    print('注册成功')
+        userdb.update({username: password})
+        print('注册成功')
 
 
 def user_check(username):
@@ -34,36 +37,33 @@ def user_check(username):
 
 
 def password_check(username,password):
-        for user,userpass in userdb.items():
+        for user, userpass in userdb.items():
             if user == username and userpass == password:
                 return 'true'
         return 'false'
 
 
 def login():
-    print('用户登录')
-    username = input('请输入用户名\n')
-    password = getpass.getpass('请输入密码\n')
-    userchec = usercheck(username)
-    passchec = passwordcheck(username,password)
     false = 0
-    while userchec == 'true' and false < 3:
-        username = input('用户名不存在，请重新输入\n')
-        userchec = usercheck(username)
+    while True:
+        print('用户登录')
+        username = input('请输入用户名\n')
         password = getpass.getpass('请输入密码\n')
-        passchec = passwordcheck(username, password)
-        false += 1
-    while passchec == 'false' and false < 3:
-        print('密码错误，请重新输入')
-        password = getpass.getpass('请输入密码\n')
-        passchec = passwordcheck(username,password)
-        false += 1
-    if false >= 3:
-        print('失败次数过多，退出程序')
-        return 'false'
-    print('登录成功')
-    with open('/var/www/'+username+'longinfo','w') as f2:
-        f2.write('login\n')
+        userchec = user_check(username)
+        passchec = password_check(username, password)
+        if userchec == 'true' and false < 3:
+            print('用户名不存在，请重新输入\n')
+            false += 1
+            continue
+        if passchec == 'false' and false < 3:
+            print('密码错误，请重新输入')
+            false += 1
+            continue
+        if false >= 3:
+            print('失败次数过多，退出程序')
+            return 'false'
+        print('登录成功')
+        loginfo.update({username: 'login'})
 
 
 def pass_check(password):
