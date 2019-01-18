@@ -9,14 +9,14 @@ begin=datetime.datetime.now()
 for i in range(2,num+1):
     zhishu.append(i)
 
-### 将数组内非质数剔除
-for i in range(2, int(zhishu[-1]**0.5)+1):  ##当zhishu[-1]//2+1 < 3的时候有一点bug
+for i in range(2, int(zhishu[-1]**0.5)+1):
     if len(zhishu) > 1:
         print(zhishu[0], end=', ')
-        del zhishu[0]
+        zhishu2 = []
         for j in zhishu:
-            if j % i == 0:
-                zhishu.remove(j)
+            if j % i != 0:
+                zhishu2.append(j)
+        zhishu = zhishu2
     else:
         print(zhishu[0], end='')
         del zhishu[0]
