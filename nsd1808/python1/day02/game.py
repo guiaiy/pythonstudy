@@ -25,4 +25,3 @@ else:
         print('\033[31;1mYou LOSE!!!\033[0m')
     else:
         print('\033[32;1m平局\033[0m')
-

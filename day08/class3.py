@@ -25,4 +25,3 @@ if __name__ == '__main__':
     print(d2.year)
     d3 = Date.is_date_valid('2019-13-21')
     print(d3)
-

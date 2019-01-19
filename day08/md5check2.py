@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
-from md5check import md5_check
 import pickle
+
+from md5check import md5_check
 
 
 def afname_get(dname):
@@ -23,11 +24,11 @@ def md5_save(dname):
     with open(os.path.join(dname, 'md5.txt'), 'wb') as f1:
         pickle.dump(savedic, f1)
 
+
 def oldmd5_get(dname):
     with open(os.path.join(dname, 'md5.txt'), 'rb') as f1:
         md5dic = pickle.load(f1)
     return md5dic
-
 
 
 def md5_check2(dname):
@@ -35,7 +36,6 @@ def md5_check2(dname):
     oldmd5dic = oldmd5_get(dname)
     for file in filelists:
         fmd5 = md5_check(file)
-
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 import os
 
+
 def get_fname():
     while True:
         fname = input('文件名: ')
@@ -9,6 +10,7 @@ def get_fname():
 
     return fname
 
+
 def get_content():
     content = []
 
@@ -17,13 +19,15 @@ def get_content():
         line = input('> ')
         if line == 'end':
             break
-        content.append(line)   # 用户输入的内容追加到列表
+        content.append(line)  # 用户输入的内容追加到列表
 
     return content
+
 
 def wfile(fname, content):
     with open(fname, 'w') as fobj:
         fobj.writelines(content)
+
 
 if __name__ == '__main__':
     fname = get_fname()
