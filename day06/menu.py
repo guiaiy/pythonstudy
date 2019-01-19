@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def menu(menu,choicelist):
+def menu(menu, choicelist):
     while True:
         select = input(menu).strip()
         if not select:
@@ -10,6 +10,7 @@ def menu(menu,choicelist):
             print('输入超出范围，请重新输入')
             continue
         return select
+
 
 if __name__ == '__main__':
     select = menu('''请选择

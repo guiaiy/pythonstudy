@@ -1,5 +1,6 @@
 def pstar(n=30):
-   return ('*'* n)
+    return ('*' * n)
+
 
 if __name__ == '__main__':
     print(pstar())

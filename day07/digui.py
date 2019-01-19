@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from random import randint
 
+
 def jiecheng(x):
     if x == 1:
         return 1
@@ -34,7 +35,6 @@ def qsort(seq):
         else:
             lager.append(num)
     return qsort(smaller) + [seq[0]] + qsort(lager)
-
 
 
 if __name__ == '__main__':

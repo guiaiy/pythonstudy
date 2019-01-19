@@ -4,9 +4,9 @@
 try:
     num = int(input('number: '))
     result = 100 / num
-except (ValueError,ZeroDivisionError):
+except (ValueError, ZeroDivisionError):
     print('Invalid input.')
-except (KeyboardInterrupt,EOFError):
+except (KeyboardInterrupt, EOFError):
     print('\nend')
 else:  ##不发生异常才会执行
     print(result)

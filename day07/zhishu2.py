@@ -8,10 +8,11 @@ def time_contro(func):
         print(func())
         finish = datetime.datetime.now()
         return (finish - begin).seconds
+
     return time_spend
 
 
-def num_input():   ###输入一个数字，输出数字（包含）以内的所有质数
+def num_input():  ###输入一个数字，输出数字（包含）以内的所有质数
     while True:
         try:
             num = int(input('请输入一个大于2的数字,将输出它以内所有质数:  '))
@@ -23,15 +24,15 @@ def num_input():   ###输入一个数字，输出数字（包含）以内的所�
     return num
 
 
-def num_save(): ### 将数字存入列表
+def num_save():  ### 将数字存入列表
     zhishu_list1 = []
-    for i in range(2, int(num_input())//1+1):
+    for i in range(2, int(num_input()) // 1 + 1):
         zhishu_list1.append(i)
     return zhishu_list1
 
 
 @time_contro
-def num_filter(): ### 过滤非质数，根据数学原理，循环不需超过最大数的平方根
+def num_filter():  ### 过滤非质数，根据数学原理，循环不需超过最大数的平方根
     num_list = num_save()
     zhishu_list = []
     while len(num_list) > 1 and num_list[0] ** 2 < num_list[-1]:

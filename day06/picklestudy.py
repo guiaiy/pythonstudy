@@ -8,4 +8,3 @@ with open('/tmp/data', 'rb') as f2:
     mylist = pickle.load(f2)
 
 print(mylist)
-

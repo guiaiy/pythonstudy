@@ -4,6 +4,7 @@
 def deco(func):
     def color():
         return '\033[31;1m%s\033[1m' % func()
+
     return color
 
 

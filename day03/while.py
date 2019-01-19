@@ -1,6 +1,6 @@
-n=1
-while 3>n:
+n = 1
+while 3 > n:
     print('yes')
-    n+=1
+    n += 1
 else:
     print('no')

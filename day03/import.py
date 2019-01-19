@@ -1,5 +1,6 @@
 ###导入模块时，代码将会执行一遍
 import star
+
 print(star)
 print(star.pstar(20))
 

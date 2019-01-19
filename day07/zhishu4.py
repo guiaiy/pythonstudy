@@ -13,7 +13,7 @@ while True:
 begin = datetime.datetime.now()
 num_list = []
 
-for i in range(2, int(num+1)//1+1):
+for i in range(2, int(num + 1) // 1 + 1):
     num_list.append(i)
 
 while len(num_list) > 1 and num_list[0] ** 2 < num_list[-1]:
@@ -28,4 +28,3 @@ for i in num_list:
 
 finish = datetime.datetime.now()
 print('程序一共花了 %s 秒' % (finish - begin).seconds)
-

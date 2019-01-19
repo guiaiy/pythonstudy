@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import tkinter
 from functools import partial
-import exam
 
 
 def hello():
@@ -15,7 +14,9 @@ def welcom():
 def say_hi(word):
     def greet():
         lb1.config(text='Hello %s' % word)
+
     return greet
+
 
 root = tkinter.Tk()
 lb1 = tkinter.Label(root, text='Hello World?', font='monofur 20 bold')

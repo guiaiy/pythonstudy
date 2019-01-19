@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import time
-import pickle
-import menu
 import os
+import pickle
+import time
+
+import menu
 
 defaultmoney = {'foundation': 10000}
 
@@ -30,9 +31,10 @@ def shouru():
         beizhu = input('请输入备注： ')
         break
     with open('/tmp/jizhang.txt', 'ab') as f2:
-        pickle.dump({'id': id_get(), 'time': time.strftime('%Y-%m-%d'), 'money': money, '类型': '收入', 'type': 1, '说明': beizhu}, f2)
+        pickle.dump(
+            {'id': id_get(), 'time': time.strftime('%Y-%m-%d'), 'money': money, '类型': '收入', 'type': 1, '说明': beizhu},
+            f2)
         id_input()
-
 
 
 def zhichu():
@@ -45,7 +47,9 @@ def zhichu():
         beizhu = input('请输入备注： ')
         break
     with open('/tmp/jizhang.txt', 'ab') as f2:
-        pickle.dump({'id': id_get(), 'time': time.strftime('%Y-%m-%d'), 'money': money, '类型': '支出', 'type': -1, '说明': beizhu}, f2)
+        pickle.dump(
+            {'id': id_get(), 'time': time.strftime('%Y-%m-%d'), 'money': money, '类型': '支出', 'type': -1, '说明': beizhu},
+            f2)
         id_input()
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-import checkid
 import getpass
 
+import checkid
 
 userdb = {}
 loginfo = {}
@@ -36,11 +36,11 @@ def user_check(username):
     return 'true'
 
 
-def password_check(username,password):
-        for user, userpass in userdb.items():
-            if user == username and userpass == password:
-                return 'true'
-        return 'false'
+def password_check(username, password):
+    for user, userpass in userdb.items():
+        if user == username and userpass == password:
+            return 'true'
+    return 'false'
 
 
 def login():

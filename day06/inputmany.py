@@ -3,6 +3,6 @@
 stopword = ''
 str = ''
 for line in iter(input, stopword):
-  str += line + '\n'
+    str += line + '\n'
 
 print(str)

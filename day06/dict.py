@@ -43,4 +43,3 @@ edict = {}.fromkeys(['tom', 'jerry'], 10)
 
 adict.update({'email': '321@321'})
 print(adict)
-

@@ -1,5 +1,4 @@
 import random
-import sys
 import string
 
 # box='1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_+'
@@ -12,13 +11,16 @@ import string
 #
 # getrandpass(int(sys.argv[1]))
 
-box2=string.ascii_letters+string.digits
+box2 = string.ascii_letters + string.digits
+
+
 def getrandpass2(long=8):
-    result=''
+    result = ''
     for i in range(long):
-        letter=random.choice(box2)
+        letter = random.choice(box2)
         result += letter
     return result
+
 
 if __name__ == '__main__':
     print(getrandpass2())

@@ -11,4 +11,3 @@ except FileExistsError:
 os.chdir('/tmp/demo')
 
 print(os.listdir('/tmp'))
-

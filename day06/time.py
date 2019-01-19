@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import time
-from datetime import datetime,timedelta
+from datetime import datetime, timedelta
 
 t = time.time()
 print(t)
@@ -22,7 +22,7 @@ print(t)
 a = t.year
 print(a)
 
-days = timedelta(days = 60)
+days = timedelta(days=60)
 
 a = t - days
 print(a)
@@ -31,7 +31,6 @@ a = t + days
 print(a)
 print(a.month)
 print(a.day)
-
 
 b = datetime.today() - timedelta(days=1)
 print(b.day)
