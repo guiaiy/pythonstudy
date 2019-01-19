@@ -2,6 +2,10 @@
 import sys
 from random import randint
 
-print(randint(1, 100))
+import mydemo
+from mydemo import foo
 
+print(randint(1, 100))
+foo.hi()
 print(sys.path)
+mydemo.star()
