@@ -26,4 +26,3 @@ if __name__ == '__main__':
     print(cp.count_patt(ip))
     print(cp.count_patt(br))
     # print(cp.fname)
-

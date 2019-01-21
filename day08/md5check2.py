@@ -45,7 +45,6 @@ def fullbackup():
 def incr_backup():
 
 
-
 if __name__ == '__main__':
     if strftime('%a'):
         fullbackup()

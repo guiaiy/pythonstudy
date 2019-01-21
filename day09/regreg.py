@@ -10,14 +10,11 @@ print(re.finditer('f..', 'seafood is food'))
 for m in re.finditer('f..', 'seafood is food'):
     print(m.group(), end=' ')
 
-
-m  = re.compile('f..')
+m = re.compile('f..')
 print(m.findall('seafood'))
 print()
 
 print(re.split('-|\.', 'hello-world.tar.gz'))
-
-
 
 print(re.sub('X', 'Mr.Smith', 'Hi X, Nice to meet you'))
 
