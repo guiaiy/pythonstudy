@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import pickle
+from time import strftime
 
 from md5check import md5_check
 
@@ -38,4 +39,15 @@ def md5_check2(dname):
         fmd5 = md5_check(file)
 
 
+def fullbackup():
+
+
+def incr_backup():
+
+
+
 if __name__ == '__main__':
+    if strftime('%a'):
+        fullbackup()
+    else:
+        incr_backup()
