@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import pymysql
 
-
 conn = pymysql.connect(
     host='127.0.0.1',
     port=3306,
@@ -11,7 +10,6 @@ conn = pymysql.connect(
     charset='utf8'
 )
 cursor = conn.cursor()
-
 create_dep = '''create table departments(
 dep_id int, 
 dep_name varchar(20) not null unique, 
