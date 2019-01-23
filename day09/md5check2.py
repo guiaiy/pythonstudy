@@ -53,7 +53,6 @@ def fullbackup(dname):
         os.mkdir('/tmp/backups/' + os.path.basename(dname.rstrip('/')))
     os.chdir('/tmp/backups/' + os.path.basename(dname.rstrip('/')))
     fname = '%s_full_%s.tar.gz' % (os.path.basename(dname.rstrip('/')), strftime('%Y%m%d'))
-    filelist = afname_get(dname)
     tar = tarfile.open(fname, 'w:gz')
     tar.add(dname)
     tar.close()
@@ -62,18 +61,19 @@ def fullbackup(dname):
 
 def incr_backup(dname):
     incrfiles = md5_check2(dname)
-    os.chdir('/tmp/backups/' + os.path.basename(dname).rstrip('/'))
-    fname = '%s_incr_%s.tar.gz' % (os.path.basename(dname.rstrip('/')), strftime('%Y%m%d'))
-    tar = tarfile.open(fname, 'w:gz')
-    for file in incrfiles:
-        tar.add(file)
-    tar.close()
-    md5_save(dname)
+    if incrfiles:
+        os.chdir('/tmp/backups/' + os.path.basename(dname).rstrip('/'))
+        fname = '%s_incr_%s.tar.gz' % (os.path.basename(dname.rstrip('/')), strftime('%Y%m%d'))
+        tar = tarfile.open(fname, 'w:gz')
+        for file in incrfiles:
+            tar.add(file)
+        tar.close()
+        md5_save(dname)
 
 
 if __name__ == '__main__':
     dname = '/mnt'
-    if not strftime('%a'):
+    if strftime('%a') == 'Mon':
         fullbackup(dname)
     else:
         incr_backup(dname)
