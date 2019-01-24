@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import getpass
 
-import checkid
+from day05 import checkid
 
 
 def useradd():

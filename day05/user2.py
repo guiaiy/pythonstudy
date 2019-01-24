@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import user
+from day05 import user
 
 if __name__ == '__main__':
     while True:

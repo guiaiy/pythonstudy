@@ -3,7 +3,7 @@ import keyword
 import string
 
 
-###合法返回0，空值返回1，keword返回2，首字符不合法返回3，其他字符不合法返回4,空值返回4###
+# 合法返回0，空值返回1，keword返回2，首字符不合法返回3，其他字符不合法返回4,空值返回4###
 
 def check_id(id):
     str = string.ascii_letters + '_'

@@ -41,5 +41,6 @@ edict = {}.fromkeys(['tom', 'jerry'], 10)
 # adict.setdefault('email','123@321')
 # print(adict)
 
-adict.update({'email': '321@321'})
-print(adict)
+# adict.update({'email': '321@321'})
+# print(adict)
+print(ddict)
