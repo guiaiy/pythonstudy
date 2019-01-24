@@ -1,4 +1,4 @@
-class PigToy:  # 定义玩具类
+class PigToy:       # 定义玩具类
     def init(self, name, color):
         self.name = name
         self.color = color
@@ -6,8 +6,7 @@ class PigToy:  # 定义玩具类
     def show_me(self):
         print('Hi, my name is %s, I am %s' % (self.name, self.color))
 
-
-piggy = PigToy()  # 创建实例
+piggy = PigToy()    # 创建实例
 piggy.init('Piggy', 'pink')
 # init(piggy, 'Piggy', 'pink')
 #   piggy.name = 'Piggy'

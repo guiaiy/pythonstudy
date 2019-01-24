@@ -18,7 +18,6 @@ class Date:
         year, month, day = map(int, date_str.split('-'))
         return year < 4000 and 1 <= month <= 12 and 1 <= day <= 31
 
-
 if __name__ == '__main__':
     d1 = Date(2019, 1, 20)
     print(d1.month)

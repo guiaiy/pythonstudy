@@ -1,21 +1,19 @@
 import os
-import pickle
 import time
-
+import pickle
 
 def save(fname):
-    amount = int(input('amount: '))  # 金额：
-    comment = input('comment: ')  # 备注
-    date = time.strftime('%Y-%m-%d')  # 当前日期
+    amount = int(input('amount: '))   # 金额：
+    comment = input('comment: ')      # 备注
+    date = time.strftime('%Y-%m-%d')   # 当前日期
     with open(fname, 'rb') as fobj:
-        all_records = pickle.load(fobj)  # 从文件中load出来看数据是列表
+        all_records = pickle.load(fobj)   # 从文件中load出来看数据是列表
     # 列表的最后一项是最新存入的数据，它是一个元组，元组倒数第二项是余额
     balance = all_records[-1][-2] + amount
     record = (date, 0, amount, balance, comment)
     all_records.append(record)
     with open(fname, 'wb') as fobj:
         pickle.dump(all_records, fobj)
-
 
 def cost(fname):
     amount = int(input('amount: '))
@@ -29,7 +27,6 @@ def cost(fname):
     with open(fname, 'wb') as fobj:
         pickle.dump(all_records, fobj)
 
-
 def query(fname):
     with open(fname, 'rb') as fobj:
         all_records = pickle.load(fobj)
@@ -38,7 +35,6 @@ def query(fname):
     # 在表头下面，打印出每一行记录
     for record in all_records:
         print('%-12s%-8s%-8s%-10s%-20s' % record)
-
 
 def show_menu():
     cmds = {'0': save, '1': cost, '2': query}
@@ -61,7 +57,6 @@ Please input your choice(0/1/2/3): """
         if choice == '3':
             break
         cmds[choice](fname)
-
 
 if __name__ == '__main__':
     show_menu()
