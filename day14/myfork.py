@@ -1,4 +1,10 @@
 import os
+
 print('hello world!')
-os.fork()
-print('how are you!')
+ret_val = os.fork()
+if ret_val:
+    print('parent!')
+else:
+    print('child')
+
+print('both')
