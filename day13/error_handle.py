@@ -1,6 +1,5 @@
 from urllib import request, error
 
-
 url1 = 'http://176.52.10.170/ban/'
 url2 = 'http://176.52.10.170/'
 # html = request.urlopen(url2)

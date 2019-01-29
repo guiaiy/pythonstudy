@@ -1,10 +1,13 @@
 import tkinter
 from functools import partial
 
+
 def say_hi(word):
     def greet():
         lb1.config(text='Hello %s!' % word)
+
     return greet
+
 
 root = tkinter.Tk()
 lb1 = tkinter.Label(root, text='Hello World!', font="Arial 20 bold")

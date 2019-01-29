@@ -8,4 +8,3 @@ session = Session()
 # sale.one().dep_name = 'sale'  # update
 # session.delete(sale.one())  # delete
 session.commit()
-

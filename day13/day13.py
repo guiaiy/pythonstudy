@@ -8,4 +8,3 @@ with open('/tmp/baidu.html', 'wb') as f1:
             f1.write(data)
         else:
             break
-

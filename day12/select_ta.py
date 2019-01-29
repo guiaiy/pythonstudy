@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-from day12.tables import *
 from sqlalchemy import or_
+
+from day12.tables import *
 
 session = Session()
 
