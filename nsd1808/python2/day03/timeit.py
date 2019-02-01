@@ -1,7 +1,5 @@
 import time
-
 from tqdm import tqdm
-
 
 def deco(func):
     def timeit():
@@ -9,9 +7,7 @@ def deco(func):
         func()
         end = time.time()
         print(end - start)
-
     return timeit
-
 
 @deco
 def myadd():
@@ -19,7 +15,6 @@ def myadd():
     for i in tqdm(range(10000000)):
         result += i
     print(result)
-
 
 if __name__ == '__main__':
     myadd()

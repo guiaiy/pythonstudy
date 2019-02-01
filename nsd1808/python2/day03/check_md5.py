@@ -1,6 +1,5 @@
-import hashlib
 import sys
-
+import hashlib
 
 def check_md5(fname):
     m = hashlib.md5()
@@ -13,7 +12,6 @@ def check_md5(fname):
             m.update(data)
 
     return m.hexdigest()
-
 
 if __name__ == '__main__':
     print(check_md5(sys.argv[1]))

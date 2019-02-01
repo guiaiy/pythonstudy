@@ -1,14 +1,11 @@
 import tkinter
 from functools import partial
 
-
 def hello():
     lb1.config(text='Hello China!')
 
-
 def welcome():
     lb1.config(text='Hello Tedu!')
-
 
 root = tkinter.Tk()
 lb1 = tkinter.Label(root, text='Hello World!', font="Arial 20 bold")

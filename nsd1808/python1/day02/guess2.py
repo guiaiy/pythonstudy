@@ -1,6 +1,6 @@
 import random
 
-number = random.randint(1, 10)  # 生成1－10之间的数字，可以包括1和10
+number = random.randint(1, 10)   # 生成1－10之间的数字，可以包括1和10
 running = True
 
 while running:
