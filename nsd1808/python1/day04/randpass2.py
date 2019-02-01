@@ -3,6 +3,7 @@ import string
 
 all_chs = string.ascii_letters + string.digits
 
+
 def gen_pass(n=8):
     result = ''
 
@@ -11,6 +12,7 @@ def gen_pass(n=8):
         result += ch
 
     return result
+
 
 if __name__ == '__main__':
     a = gen_pass()

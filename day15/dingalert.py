@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import json
-import requests
 import sys
+
+import requests
 
 
 def send_msg(url, reminders, msg):
@@ -17,7 +18,8 @@ def send_msg(url, reminders, msg):
         }
     }
     r = requests.post(url, data=json.dumps(data), headers=headers)
-    return  r.text
+    return r.text
+
 
 if __name__ == '__main__':
     msg = sys.argv[1]

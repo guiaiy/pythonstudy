@@ -1,6 +1,5 @@
-from urllib import request
 import json
-import pprint
+from urllib import request
 
 html = request.urlopen('http://www.weather.com.cn/data/sk/101250101.html')
 data = html.read()

@@ -2,6 +2,7 @@ import getpass
 
 userdb = {}
 
+
 def register():
     username = input('username: ')
     if username in userdb:
@@ -9,6 +10,7 @@ def register():
     else:
         password = input('password: ')
         userdb[username] = password
+
 
 def login():
     username = input('username: ')
@@ -18,6 +20,7 @@ def login():
         print('Login successful')
     else:
         print('Login incorrect')
+
 
 def show_menu():
     cmds = {'0': register, '1': login}
@@ -33,6 +36,7 @@ Please input your choice(0/1/2): """
         if choice == '2':
             break
         cmds[choice]()
+
 
 if __name__ == '__main__':
     show_menu()

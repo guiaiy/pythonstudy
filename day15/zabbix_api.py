@@ -1,6 +1,6 @@
-import requests
 import json
 
+import requests
 
 url = 'http://139.159.248.149:3680/api_jsonrpc.php'
 headers = {'Content-Type': 'application/json-rpc'}

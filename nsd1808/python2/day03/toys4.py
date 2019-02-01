@@ -6,6 +6,7 @@ class PigToy:
     def show_me(self):
         print('Hi, my name is %s, I am %s' % (self.name, self.color))
 
+
 class NewPigToy(PigToy):
     def __init__(self, name, color, size):
         # PigToy.__init__(self, name, color)
@@ -14,6 +15,7 @@ class NewPigToy(PigToy):
 
     def walk(self):
         print('walking...')
+
 
 a = NewPigToy('piggy', 'pink', 'Middle')
 print(a.name, a.size)

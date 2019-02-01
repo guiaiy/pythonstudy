@@ -5,7 +5,6 @@ r = requests.get('http://127.0.0.1/', headers=header)
 r = requests.get('http://127.0.0.1')
 print(r.status_code)
 
-
 r = requests.get('http://127.0.0.1/abc')
 print(r.status_code)
 print(r.raise_for_status())

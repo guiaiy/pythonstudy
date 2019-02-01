@@ -31,7 +31,3 @@ print(s)
 x, y = 10, 20
 small = x if x <= y else y
 print(small)
-
-
-
-

@@ -1,6 +1,7 @@
-import requests
 import json
 from pprint import pprint
+
+import requests
 
 url = 'http://139.159.248.149:3680/api_jsonrpc.php'
 headers = {'Content-Type': 'application/json-rpc'}

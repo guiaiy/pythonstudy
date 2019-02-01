@@ -80,8 +80,8 @@
 #
 def func1(x):
     if x == 1:
-        return 1    # 如果x是1，返回1
-    return x * func1(x - 1)   # 否则，返加这个数乘以它下一个数的阶乘
+        return 1  # 如果x是1，返回1
+    return x * func1(x - 1)  # 否则，返加这个数乘以它下一个数的阶乘
     #      5 * func1(4)
     #      5 * 4 * func1(3)
     #      5 * 4 * 3 * func1(2)
@@ -92,12 +92,3 @@ def func1(x):
 if __name__ == '__main__':
     print(func1(5))
     print(func1(6))
-
-
-
-
-
-
-
-
-
