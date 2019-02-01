@@ -11,7 +11,8 @@ class TcpTimeServer:
         self.serv.bind(self.addr)
         self.serv.listen(1)
 
-    def chat(self, cli_sock):
+    @staticmethod
+    def chat(cli_sock):
         while True:
             data = cli_sock.recv(1024)
             if data.strip() == b'quit':
