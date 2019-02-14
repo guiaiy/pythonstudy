@@ -3,7 +3,7 @@ import os
 import pickle
 import time
 
-import menu
+from day06 import menu
 
 defaultmoney = {'foundation': 10000}
 

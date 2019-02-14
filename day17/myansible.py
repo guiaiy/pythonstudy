@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
-import json
 import shutil
 from collections import namedtuple
-from ansible.parsing.dataloader import DataLoader
-from ansible.vars.manager import VariableManager
-from ansible.inventory.manager import InventoryManager
-from ansible.playbook.play import Play
-from ansible.executor.task_queue_manager import TaskQueueManager
+
 import ansible.constants as C
+from ansible.executor.task_queue_manager import TaskQueueManager
+from ansible.inventory.manager import InventoryManager
+from ansible.parsing.dataloader import DataLoader
+from ansible.playbook.play import Play
+from ansible.vars.manager import VariableManager
 
 
 def ad_hoc(inventory_path=None, hosts=None, module=None, args=None):

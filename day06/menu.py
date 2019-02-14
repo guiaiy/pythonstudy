@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def menu(menu, choicelist):
     while True:
         select = input(menu).strip()

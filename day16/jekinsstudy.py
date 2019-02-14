@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-import wget
-import os
-import requests
 import hashlib
+import os
 import tarfile
+
+import requests
+import wget
 
 
 def has_new_version(live_url, live_fname):
