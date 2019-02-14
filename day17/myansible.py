@@ -52,7 +52,7 @@ def ad_hoc(inventory_path=None, hosts=None, module=None, args=None):
 
 if __name__ == '__main__':
     ad_hoc(
-        inventory_path='/root/pythonstudy/myansible/hosts',
+        inventory_path='hosts',
         hosts='web',
         module='shell',
         args='ls'
